@@ -1,16 +1,16 @@
-RTL-00 blink test using openocd and stm32f3348-discovery
+# RTL-00 blink test using openocd and stm32f3348-discovery
 
-pins:
+## pins:
 
-LED:   GC4
-SWDIO: GE3
-SWCLK: GE4
+### LED:   GC4
+### SWDIO: GE3
+### SWCLK: GE4
 
-building:
+## building:
 
-make
+### make
 
-testing:
+## testing:
 
-make install
+### make install
 
