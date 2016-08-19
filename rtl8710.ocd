@@ -46,12 +46,3 @@ if {![using_hla]} {
    cortex_m reset_config sysresetreq
 }
 
-proc cortex_start {address} {
-	reg faultmask 0x01
-	set vectors ""
-	mem2array vectors 32 $address 2
-	reg sp $vectors(0)
-	reg pc $vectors(1)
-	resume
-}
-

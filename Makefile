@@ -24,7 +24,7 @@ clean:
 	rm -rf $(FILENAME_PREFIX).bin $(FILENAME_PREFIX).elf
 
 install:
-	openocd -f interface/stlink-v2-1.cfg -f rtl8710.ocd -c "init" -c "reset halt" -c "load_image $(FILENAME_PREFIX).bin $(ADDRESS) bin" -c "cortex_start $(ADDRESS)" -c "shutdown"
+	openocd -f interface/stlink-v2-1.cfg -f rtl8710.ocd -f cortex/cortex.ocd -c "init" -c "reset halt" -c "load_image $(FILENAME_PREFIX).bin $(ADDRESS) bin" -c "cortex_bootstrap $(ADDRESS)" -c "shutdown"
 
 reset:
 	openocd -f interface/stlink-v2-1.cfg -f rtl8710.ocd -c "init" -c "reset halt" -c "reset run" -c "shutdown"

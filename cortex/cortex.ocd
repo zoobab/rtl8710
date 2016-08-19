@@ -1,0 +1,10 @@
+proc cortex_bootstrap {start} {
+	# disable interrupts
+	reg faultmask 0x01
+	set vectors ""
+	mem2array vectors 32 $start 2
+	reg sp $vectors(0)
+	reg pc $vectors(1)
+	resume
+}
+
