@@ -1,6 +1,6 @@
 MEMORY{
 	tcm (rx)     : ORIGIN = 0x1FFF0000, LENGTH = 64k
-	ram (rwx)    : ORIGIN = 0x10000000, LENGTH = 458751
+	ram (rwx)    : ORIGIN = 0x10000000, LENGTH = 448k
 }
 
 PROVIDE(STACK_TOP = 0x1FFF0000 + 64k);
